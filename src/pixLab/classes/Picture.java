@@ -178,6 +178,26 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void mirrorBackwardsDiagonal()
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  Pixel topRight = null;
+	  Pixel botLeft = null;
+	  
+	  for(int row = 0; row < pixels.length; row++)
+	  {
+		  for(int col = 0; col < pixels[0].length; col++)
+		  {
+			   if(row != col && row < pixels[0].length && col < pixels.length)
+			  {
+				  topRight = pixels[row][col];
+				  botLeft = pixels[col][row];
+				  botLeft.setColor(topRight.getColor());
+			  }
+		  }
+	  }
+  }
+  
   public void mirrorBottomRightToTopLeft()
   {
 	  Pixel topLeft = null;
@@ -236,8 +256,7 @@ public class Picture extends SimplePicture
     * @param startRow the start row to copy to
     * @param startCol the start col to copy to
     */
-  public void copy(Picture fromPic, 
-                 int startRow, int startCol)
+  public void copy(Picture fromPic, int startRow, int startCol)
   {
     Pixel fromPixel = null;
     Pixel toPixel = null;
@@ -399,7 +418,19 @@ public class Picture extends SimplePicture
 	    }
 	  }
  
-  
+  public void negateColor()
+  {
+    Pixel[][] currentPicture = this.getPixels2D();
+    for (Pixel[] row : currentPicture)
+    {
+      for (Pixel currentPixel : row)
+      {
+    	  currentPixel.setRed(255 - currentPixel.getRed());
+    	  currentPixel.setGreen(255 - currentPixel.getGreen());
+    	  currentPixel.setBlue(255 - currentPixel.getBlue());
+      }
+    }
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 

@@ -127,6 +127,26 @@ public class PictureTester
 	  forrest.explore();
   }
   
+  public static void testNegateColor()
+  {
+	  Picture girl = new Picture("jenny-red.jpg");
+	  girl.explore();
+	  girl.negateColor();
+	  girl.explore();
+  }
+  
+  public static void testFiveFilters()
+  {
+	  Picture city = new Picture("city.jpg");
+	  city.explore();
+	  city.mirrorVertical();
+	  city.mirrorDiagonal();
+	  city.mirrorBackwardsDiagonal();
+	  city.negateColor();
+	  city.Grayscale();
+	  city.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -140,6 +160,8 @@ public class PictureTester
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
+	//testNegateColor();
+	  testFiveFilters();
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
@@ -148,14 +170,13 @@ public class PictureTester
 	//testMirrorBottomRightToTopLeft();
     //testMirrorTemple();
     //testMirrorSnowman();
-	//testGrayscale();
     //testMirrorGull();
 	//testFullRandom();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
-    testEdgeDetection2();
+    //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
