@@ -86,6 +86,15 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testEdgeDetection2()
+  {
+	  Picture swan = new Picture("swan.jpg");
+	  swan.edgeDetection2(10);
+	  swan.explore();
+	  swan.edgeDetection2(20);
+	  swan.explore();
+  }
+  
   public static void testMirrorSnowman()
   {
 	  Picture snowman = new Picture("snowman.jpg");
@@ -100,6 +109,22 @@ public class PictureTester
 	  gull.explore();
 	  gull.mirrorGull();
 	  gull.explore();
+  }
+  
+  public static void testFullRandom()
+  {
+	  Picture robot = new Picture("wall.jpg");
+	  robot.explore();
+	  robot.fullRandom();
+	  robot.explore();
+  }
+  
+  public static void testGrayscale()
+  {
+	  Picture forrest = new Picture("CumberlandIsland.jpg");
+	  forrest.explore();
+	  forrest.Grayscale();
+	  forrest.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -123,12 +148,14 @@ public class PictureTester
 	//testMirrorBottomRightToTopLeft();
     //testMirrorTemple();
     //testMirrorSnowman();
-    testMirrorGull();
+	//testGrayscale();
+    //testMirrorGull();
+	//testFullRandom();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
-    //testEdgeDetection2();
+    testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);

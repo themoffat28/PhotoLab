@@ -303,6 +303,28 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void edgeDetection2(int edgeDist)
+  {
+	  Pixel leftPixel = null;
+	  Pixel rightPixel = null;
+	  Pixel [][] pixels = this.getPixels2D();
+	  Color rightColor = null;
+	  
+	  for (int row = 0; row < pixels.length -1; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length - 1; col++)
+		  {
+			  leftPixel = pixels[row][col];
+			  rightPixel = pixels[row+1][col+1];
+			  rightColor = rightPixel.getColor();
+			  if(leftPixel.colorDistance(rightColor) > edgeDist)
+				  leftPixel.setColor(Color.WHITE);
+			  else
+				  leftPixel.setColor(Color.BLACK);
+		  }
+	  }
+  }
+  
   public void mirrorSnowman()
   {
 	  int mirrorPoint = 208;
@@ -333,18 +355,49 @@ public class Picture extends SimplePicture
 	    
 	    Pixel[][] pixels = this.getPixels2D();
 	    
-	    for (int row = 200; row < 350; row++)
+	    for (int row = 220; row < 360; row++)
 	    {
 	      
-	      for (int col = 100; col < 295; col++)
+	      for (int col = 120; col < 400; col++)
 	      {
 	        
 	        topPixel = pixels[row][col];      
-	        botPixel = pixels[row + 100][mirrorPoint - col + mirrorPoint];
+	        botPixel = pixels[row][mirrorPoint - col + mirrorPoint];
 	        botPixel.setColor(topPixel.getColor());
 	      }
 	    }
   }
+  
+  public void fullRandom()
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  for (Pixel [] row :currentPicture)
+	  {
+		  for(Pixel currentPixel : row)
+		  {
+			  int red = (int) (Math.random() * 256);
+			  int green = (int) (Math.random() * 256);
+			  int blue = (int) (Math.random() * 256);
+			  
+			  currentPixel.setColor(new Color (red, green, blue));
+		  }
+	  }
+  }
+  
+  public void Grayscale()
+  {
+	    Pixel[][] pixels = this.getPixels2D();
+	    for (Pixel[] rowArray : pixels)
+	    {
+	      for (Pixel pixelObj : rowArray)
+	      {
+	        int avg = (int)((pixelObj.getRed() + pixelObj.getGreen() + pixelObj.getBlue()) / 3);
+	        pixelObj.setRed(avg);
+	        pixelObj.setGreen(avg);
+	        pixelObj.setBlue(avg);
+	      }
+	    }
+	  }
  
   
   
