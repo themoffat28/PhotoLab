@@ -95,6 +95,12 @@ public class PictureTester
 	  swan.explore();
   }
   
+  public static void copy()
+  {
+	  Picture swan = new Picture("swan.jpg");
+	  swan.
+  }
+  
   public static void testMirrorSnowman()
   {
 	  Picture snowman = new Picture("snowman.jpg");
@@ -161,7 +167,7 @@ public class PictureTester
     //testNegate();
     //testGrayscale();
 	//testNegateColor();
-	  testFiveFilters();
+	//testFiveFilters();
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
@@ -174,7 +180,8 @@ public class PictureTester
 	//testFullRandom();
     //testMirrorDiagonal();
     //testCollage();
-    //testCopy();
+    //testCopyOriginal();
+	testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
