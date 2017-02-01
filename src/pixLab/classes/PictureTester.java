@@ -95,10 +95,11 @@ public class PictureTester
 	  swan.explore();
   }
   
-  public static void copy()
+  public static void testCopyCustom()
   {
 	  Picture swan = new Picture("swan.jpg");
-	  swan.
+	  swan.copyCustom(swan, 105, 130, 239, 330);
+	  swan.explore();
   }
   
   public static void testMirrorSnowman()
@@ -181,7 +182,7 @@ public class PictureTester
     //testMirrorDiagonal();
     //testCollage();
     //testCopyOriginal();
-	testCopy();
+	testCopyCustom();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
