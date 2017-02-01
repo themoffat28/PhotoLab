@@ -323,6 +323,25 @@ public class Picture extends SimplePicture
     this.write("collage.jpg");
   }
   
+  public void createCollageCustom()
+  {
+    Picture flower1 = new Picture("arch.jpg");
+    Picture flower2 = new Picture("temple.jpg");
+    Picture flower3 = new Picture("gorge.jpg");
+    this.copyOriginal(flower1,0,0);
+    this.copyOriginal(flower2,100,0);
+    this.copyOriginal(flower3, 150, 0);
+    this.copyOriginal(flower1,200,0);
+    Picture flowerNoBlue = new Picture(flower2);
+    flowerNoBlue.zeroBlue();
+    this.copyOriginal(flowerNoBlue,300,0);
+    this.copyOriginal(flower1,400,0);
+    this.copyOriginal(flower3, 450, 0);
+    this.copyOriginal(flower2,500,0);
+    this.mirrorVertical();
+    this.write("collage.jpg");
+  }
+  
   
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
