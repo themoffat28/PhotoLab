@@ -188,7 +188,7 @@ public class PictureTester
 	//testFullRandom();
     //testMirrorDiagonal();
     //testCollage();
-	testCollageCustom();  
+	//testCollageCustom();  
     //testCopyOriginal();
 	//testCopyCustom();
     //testEdgeDetection();
