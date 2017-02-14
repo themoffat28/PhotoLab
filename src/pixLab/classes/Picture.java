@@ -99,6 +99,18 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void zeroGreen()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setGreen(0);
+      }
+    }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
@@ -462,7 +474,30 @@ public class Picture extends SimplePicture
 	        pixelObj.setBlue(avg);
 	      }
 	    }
+	    write("grayed out.jpg");
 	  }
+  
+  
+  public void valentine()
+  {
+	  Pixel[][] currentPicture = this.getPixels2D();
+	  
+	  for(Pixel [] row : currentPicture)
+	  {
+		  for(Pixel current : row)
+		  {
+			  current.setBlue(0);
+			  current.setGreen(0);
+		  }
+	  }
+	  drawString("I watch you.", 180, 100);
+	  drawString("Be my Valentine.", 165, 200);
+	  write("/Users/bmof0507/beMyValentine.jpg");
+	  write("/Users/bmof0507/123.png");
+	  explore();
+	  write("/Users/bmof0507/Documents/other.png");
+	  write("/Users/bmof0507/beMyValentine2.jpg");
+  }
  
   public void negateColor()
   {
@@ -478,14 +513,15 @@ public class Picture extends SimplePicture
     }
   }
   
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("MyValentine.png");
     beach.explore();
-    beach.zeroBlue();
+    beach.valentine();
     beach.explore();
   }
   

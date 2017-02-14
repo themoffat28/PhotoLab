@@ -159,6 +159,36 @@ public class PictureTester
 	  city.negateColor();
 	  city.Grayscale();
 	  city.explore();
+	  city.write("derpderpderp.jpg");
+  }
+  
+  public static void testValentinesMeme()
+  {
+//	  Picture valentines = new Picture("Valentine.jpg");
+//	  valentines.zeroBlue();
+//	  valentines.zeroGreen();
+//	  valentines.drawString("I watch you.", 180, 100);
+//	  valentines.drawString("Be my Valentine.", 165, 200);
+//	  valentines.explore();
+//	  valentines.write("ValentineMeme");
+//	  
+	  Picture tester = new Picture("MyValentine.png");
+	  tester.explore();
+	  tester.valentine();
+	  tester.explore();
+//	  valentines.write("ValentineMemeMeme.jpg");
+	  tester.write("122345.jpg");
+	  
+  }
+  
+  public static void testGlitchArt()
+  {
+	  Picture glitch = new Picture("city.jpg");
+	  glitch.explore();
+	  glitch.negateColor();
+	  glitch.mirrorBackwardsDiagonal();
+	  glitch.mirrorBottomRightToTopLeft();
+	  glitch.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -173,9 +203,9 @@ public class PictureTester
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
-    //testGrayscale();
+//    testGrayscale();
 	//testNegateColor();
-	//testFiveFilters();
+//	testFiveFilters();
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
@@ -199,5 +229,7 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+	//testValentinesMeme();
+	  testGlitchArt();
   }
 }
