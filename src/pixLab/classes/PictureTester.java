@@ -191,6 +191,16 @@ public class PictureTester
 	  glitch.explore();
   }
   
+  public static void testSteganography()
+  {
+	  Picture source = new Picture("base Image.png");
+	  Picture hidden = new Picture("hidden.png");
+	  source.encode(hidden);
+	  source.decode();
+	  source.explore();
+	  
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -205,7 +215,7 @@ public class PictureTester
     //testNegate();
 //    testGrayscale();
 	//testNegateColor();
-//	testFiveFilters();
+	//testFiveFilters();
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
@@ -230,6 +240,7 @@ public class PictureTester
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
 	//testValentinesMeme();
-	  testGlitchArt();
+	//testGlitchArt();
+	  testSteganography();
   }
 }
